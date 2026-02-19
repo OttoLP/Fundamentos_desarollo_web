@@ -1,11 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario de prueba de HTML5</title>
 </head>
 <body>
-    
+
+    <form action="" method="get">
+        <p>
+            Nombre:
+            <input type="text" id="nombre" name="nombre" required>
+        </p>
+
+        <p>
+            Correo electrónico:
+            <input type="email" id="correo" name="correo" required>
+        </p>
+
+        <p>
+            URL:
+            <input type="url" id="url" name="url" placeholder="Escribe la URL de tu página web personal">
+        </p>
+
+        <p>
+            Fecha:
+            <input type="date" id="fecha" name="fecha">
+        </p>
+
+        <p>
+            Tiempo:
+            <input type="time" id="tiempo" name="tiempo">
+        </p>
+
+        <p>
+            Fecha y hora:
+            <input type="datetime-local" id="fechahora" name="fechahora">
+        </p>
+
+        <p>
+            Mes:
+            <input type="month" id="mes" name="mes">
+        </p>
+
+        <p>
+            Semana:
+            <input type="week" id="semana" name="semana">
+        </p>
+
+        <p>
+            Número (min -10, max 10):
+            <input type="number" id="numero" name="numero" min="-10" max="10" value="0">
+        </p>
+
+        <p>
+            Teléfono:
+            <input type="tel" id="telefono" name="telefono">
+        </p>
+
+        <p>
+            Término de búsqueda:
+            <input type="search" id="busqueda" name="busqueda">
+        </p>
+
+        <p>
+            Color favorito:
+            <input type="color" id="color" name="color">
+        </p>
+
+        <button type="submit">Enviar</button>
+    </form>
+
 </body>
 </html>

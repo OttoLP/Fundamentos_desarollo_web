@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+}
+
+.main-conteiner{
+    width: 100vw;
+    height: 100vh;
+    padding: 25px;
+    background-image: url(./images/fondo.jpg);
+}
+
+.card{
+    height: 500px;
+    width: 400px;
+    
+    margin:auto;
+    
+}
+
+img{
+    width: 100%;
+    height: 55%;
+}
+
+.img-container{
+    width: 100%;
+    height: 55%;
+}
+
+.text-conteiner{
+    
+    height: 45%;
+    background-color: bisque;
+    padding: 25px 25px;
+}
+
+h1{
+    margin-top: 0;
+    /*border-bottom: dotted black 1px;*/
+    text-align: center;
+    /*padding: 25px 25px;*/
+}
+
+hr{
+    border: dotted grey 1px;
+
+}
+
+p{
+    color: grey;
+
+}
+
+button{
+    margin:auto;
+    display: block;
+    background-color: red;
+    border: none;
+    color: white;
+    height: 40px;
+    font-size: 14px;
+    width: 180px;
+}

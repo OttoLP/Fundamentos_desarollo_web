@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de Selectores </title>
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        p {
+            font-size: 18px;
+            color: grey; 
+        }
+
+        .especial {
+            background-color: lightblue; 
+            font-weight: bold;
+        }
+
+        #importante {
+            background-color: red;
+            color: white;
+        }
+
+        input[placeholder] {
+            border: 1px solid blue;
+            padding: 5px;
+        }
+
+        input[type="password"] {
+            background-color: white;
+        }
+
+        #contenedor {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="contenedor">
+        <h1>Ejercicio de Selectores CSS</h1>
+        <ul class="lista">
+            <li>Elemento 1</li>
+            <li class="destacado">Elemento 2</li>
+            <li>Elemento 3</li>
+        </ul>
+        <p>Este es un párrafo normal.</p>
+        <p class="especial">Este es un párrafo con una clase especial.</p>
+        <p id="importante">Este párrafo tiene un ID único.</p>
+        <input type="text" placeholder="Escribe aquí">
+        <input type="email" placeholder="Correo electrónico">
+        <input type="password" placeholder="Contraseña">
+        <a href="https://ejemplo.com" target="_blank">Enlace externo</a>
+        <a href="#" class="boton">Botón de prueba</a>
+    </div>
+
+</body>
+</html>
