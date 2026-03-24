@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+</head>
+
+<body onload="cargar()">
+
+    <button onclick="incrementar()">+1</button>
+
+    <p>0</p>
+
+    <script>
+        const p = document.querySelector("p");
+        let contador = localStorage.getItem("contador");
+
+
+        function cargar() {
+            if (contador === null) {
+                contador = 0;
+            }
+
+            p.textContent = contador;
+            localStorage.setItem("nombre", juan);
+        }
+
+        function incrementar() {
+            contador++;
+            localStorage.setItem("contador", contador);
+            p.textContent = contador;
+        }
+
+        const objeto = {
+            nombre: "Juan",
+            apelludo: "Perez",
+            edad: 30,
+            ciudad: "Ciudad de Mexico",
+            materias: ["Matematicas", "Fisica", "Quimica"],
+            direccion: {
+                calle: "Calle Falsa",
+                numero: 123,
+                esPrivada: true
+            }
+        }
+
+        console.log(objeto);
+        
+    </script>
+
+</body>
+
+</html>

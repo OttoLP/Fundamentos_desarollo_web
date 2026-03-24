@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+</head>
+
+<body onload="cargar()">
+
+    <h1>Personajes de Rick and Morty</h1>
+    <div id="contenedor-personajes"></div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #contenedor-personajes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .personaje {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        .personaje img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .personaje h3 {
+            font-size: 16px;
+            margin: 10px 8px 0;
+        }
+    </style>
+
+    <script>
+
+        async function cargar() {
+            const result = await fetch("https://rickandmortyapi.com/api/character").then(response => response.json())
+
+            const personajes = result.results;
+            const contenedor = document.getElementById("contenedor-personajes");
+
+            contenedor.innerHTML = "";
+
+            for (let i = 0; i < personajes.length; i++) {
+                const personaje = personajes[i];
+
+                const tarjeta = document.createElement("div");
+                tarjeta.className = "personaje";
+
+                const imagen = document.createElement("img");
+                imagen.src = personaje.image;
+                imagen.alt = personaje.name;
+
+                const nombre = document.createElement("h3");
+                nombre.textContent = personaje.name;
+
+                tarjeta.appendChild(imagen);
+                tarjeta.appendChild(nombre);
+
+                contenedor.appendChild(tarjeta);
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

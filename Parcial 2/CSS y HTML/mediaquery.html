@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-color: lightblue;
+        }
+
+        .item {
+            height: 200px;
+            width: 33%;
+            float: left;
+        }
+
+        .item1 {
+
+            background-color: red;
+        }
+
+        .item2 {
+
+            background-color: green;
+        }
+
+        .item3 {
+
+            background-color: blue;
+        }
+
+        @media (width <=375px) {
+            .item {
+                width: 100%;
+            }
+        }
+
+        @media (width > 376px) and (width <=768px) {
+            .item1 {
+                width: 50%;
+            }
+
+            .item2 {
+                width: 50%;
+            }
+            .item3 {
+                width: 100%;
+            }
+        }
+
+        @media (width > 768px) {
+            .item {
+                width: 33%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+    </div>
+</body>
+
+</html>

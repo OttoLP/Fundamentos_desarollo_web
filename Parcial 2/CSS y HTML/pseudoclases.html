@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudoclases</title>
+
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition-property: float;
+            transition-duration: 3s;
+            /* transition-delay: 2s; */
+            transition-timing-function: ease-in-out;
+            margin: 5px;
+            float: left;
+        }
+
+        div:active {
+            background-color: green;
+            width: 200px;
+            height: 200px;
+            float: right;
+        }
+
+        p{
+            color: blue;   
+            font-size: medium;
+        }
+        p:active {
+            color: red;
+            font-size: larger;
+        }
+
+        input:focus {
+            background-color: yellow;
+            font-size: larger;
+        }
+
+    </style>
+    
+</head>
+
+<body>
+
+    <div>
+
+    </div>
+
+    <div>
+
+    </div>
+
+    <div>
+
+    </div>
+
+
+    <p>Este es un parrafo</p>
+
+    <input type="text" >
+    <input type="text" >
+    <input type="text" >
+
+    <button>Boton</button>
+
+</body>
+
+</html>

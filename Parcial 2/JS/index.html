@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h1 id="encabezado" style="color: red;">Hola mundo </h1>
+    <h1>Hola mundo </h1>
+    <h2>hola mundo </h2>
+    <h1 class="texto">hola mundo 2 </h1>
+    <h1 >hola mundo 2 </h1>
+
+    <div>
+        <p>Parrafo asbndhjbasjdnasjkdnasjkdbjasdbasjkdn </p>
+    </div>
+
+    <a href="#">Ir a google</a>
+    <img src="" alt="IMAGEN">
+
+    <script >
+        const div = document.querySelector("div");
+
+        const h1 = document.querySelector("h1");
+        const h2 = document.querySelector("h2");
+
+        // const elements = document.querySelectorAll("h1");
+        // const id1 = document.getElementById("encabezado");
+        // const class1 = document.getElementsByClassName("texto");
+
+        h1.textContent = "Hola mundo desde JS";
+        h1.style.color = "blue";
+        h2.textContent = "Hola mundo desde JS";
+
+        console.log(div);
+
+        const a = document.querySelector("a");
+        a.href = "https://www.google.com";
+
+        const img = document.querySelector("img");
+        img.src = "https://picsum.photos/200/300";
+
+        
+
+        function createElement() {
+            const p = document.createElement("p");
+            p.textContent = "Hola mundo desde la vecindad del chavo";
+            div.appendChild(p);
+        }
+
+        function removeElement() {
+            const p = document.querySelector("p");
+            div.removeChild(p);
+        }
+
+    
+    </script>
+
+
+</body>
+
+</html>

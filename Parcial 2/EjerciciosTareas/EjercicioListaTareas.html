@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #e8e8e8;
+        }
+
+        .contenedor {
+            width: 360px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 16px;
+        }
+
+        .fila {
+            display: flex;
+            gap: 8px;
+        }
+
+        input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #b5b5b5;
+        }
+
+        #btnAgregar {
+            padding: 8px 12px;
+            border: 1px solid #999;
+            background-color: #efefef;
+            cursor: pointer;
+        }
+
+        .lista {
+            margin-top: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .tarea {
+            background-color: #f5de64;
+            border: 1px solid #ccb842;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .texto {
+            text-align: left;
+            flex: 1;
+            word-break: break-word;
+        }
+
+        .acciones {
+            display: flex;
+            gap: 6px;
+        }
+
+        .acciones button {
+            padding: 6px 8px;
+            border: 1px solid #8f8f8f;
+            background-color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Tareas</h1>
+
+        <div class="fila">
+            <input type="text" id="inputTarea" placeholder="Escribe algo...">
+            <button id="btnAgregar">Agregar tarea</button>
+        </div>
+
+        <div id="listaTareas" class="lista"></div>
+    </div>
+
+    <script>
+        var inputTarea = document.getElementById("inputTarea");
+        var btnAgregar = document.getElementById("btnAgregar");
+        var listaTareas = document.getElementById("listaTareas");
+
+        btnAgregar.addEventListener("click", function () {
+            var texto = inputTarea.value.trim();
+
+            if (texto === "") {
+                return;
+            }
+
+            var tarea = document.createElement("div");
+            tarea.className = "tarea";
+
+            var textoTarea = document.createElement("span");
+            textoTarea.className = "texto";
+            textoTarea.textContent = texto;
+
+            var acciones = document.createElement("div");
+            acciones.className = "acciones";
+
+            var btnCompletar = document.createElement("button");
+            btnCompletar.textContent = "Completar";
+
+            var btnEliminar = document.createElement("button");
+            btnEliminar.textContent = "Eliminar";
+
+            btnCompletar.addEventListener("click", function () {
+                tarea.style.backgroundColor = "#5fcd70";
+                tarea.style.borderColor = "#3fa650";
+            });
+
+            btnEliminar.addEventListener("click", function () {
+                listaTareas.removeChild(tarea);
+            });
+
+            acciones.appendChild(btnCompletar);
+            acciones.appendChild(btnEliminar);
+
+            tarea.appendChild(textoTarea);
+            tarea.appendChild(acciones);
+
+            listaTareas.appendChild(tarea);
+
+            inputTarea.value = "";
+            inputTarea.focus();
+        });
+    </script>
+</body>
+</html>

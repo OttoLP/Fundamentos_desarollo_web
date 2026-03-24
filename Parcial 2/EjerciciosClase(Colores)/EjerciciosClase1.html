@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos JS</title>
+
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            text-align: center;
+            font-weight: bold;
+
+        }
+    </Style>
+</head>
+
+<body >
+
+    <button onclick="createElemento()">Agregar Elemento </button>
+    <input type="number" id="red" min="0" max="255" placeholder="R" oninput="limitarRGB(this)">
+    <input type="number" id="green" min="0" max="255" placeholder="G" oninput="limitarRGB(this)">
+    <input type="number" id="blue" min="0" max="255" placeholder="B" oninput="limitarRGB(this)">
+    <br>
+    <br>
+
+    <div class="container">
+
+        
+
+    </div>
+
+
+    <script>
+        const container = document.querySelector(".container");
+        const inputRed = document.querySelector("#red");
+        const inputGreen = document.querySelector("#green");
+        const inputBlue = document.querySelector("#blue");
+
+
+        let counter =0;
+
+
+        function limitarRGB(input) {
+            if (input.value === "") return;
+
+            let valor = Number(input.value);
+
+            if (valor < 0) valor = 0;
+            if (valor > 255) valor = 255;
+
+            input.value = valor;
+        }
+
+
+        function createElemento() {  
+            counter++;  
+            const item = document.createElement("div");
+            const r = Number(inputRed.value);
+            const g = Number(inputGreen.value);
+            const b = Number(inputBlue.value);
+
+            if (isNaN(r) || isNaN(g) || isNaN(b)) {
+                alert("Ingresa los 3 valores RGB");
+                return;
+            }
+
+            if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255) {
+                alert("Cada valor debe estar entre 0 y 255");
+                return;
+            }
+
+            item.textContent = `rgb(${r}, ${g}, ${b})`;
+            item.classList.add("item");
+            item.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            container.appendChild(item);
+
+            inputRed.value = "";
+            inputGreen.value = "";
+            inputBlue.value = "";
+                
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos JS</title>
+</head>
+
+<body onload="saludar()">
+
+    <button type="button" onclick="saludar()" onmouseenter="saludar()">Saludar</button>
+
+    <input type="text" onkeypress="saludar(event)">
+
+    <input type="text" onblur="saludar()" onfocus="saludar()">
+    
+
+
+
+    <script>
+        function saludar(event){
+            //console.log("Hola mundo desde tepepingo");
+            console.log(event);
+    }
+
+    </script>
+    
+
+</body>
+
+</html>
